@@ -355,9 +355,9 @@ aside {
     font-size: 2.2em;
     line-height: 1.9em;
     font-weight: 100;
-    white-space: pre-line;
     padding: 0 15px;
 }
+.visual__texts .text p { width: 100%; height: 1.9em; overflow: hidden; }
 .visual__texts .text strong { font-weight: 500; }
 
 
@@ -484,76 +484,76 @@ aside {
     100%    { opacity: 0; }
 }
 @keyframes t-1 {
-    0%      { transform: translateX(0); opacity: 1; }
-    25%     { transform: translateX(0); opacity: 1; }
+    0%      { width: 400px; opacity: 1; }
+    25%     { width: 400px; opacity: 1; }
     
-    33.333% { transform: translateX(100px); opacity: 0; }
-    58.333% { transform: translateX(100px); opacity: 0; }
+    33.333% { width: 0%; opacity: 0; }
+    58.333% { width: 0%; opacity: 0; }
 
-    66.666% { transform: translateX(-100px); opacity: 0; }
-    91.666% { transform: translateX(-100px); opacity: 0; }
+    66.666% { width: 0%; opacity: 1; }
+    91.666% { width: 0%; opacity: 1; }
 
-    100%    { transform: translateX(0); opacity: 1; }
+    100%    { width: 400px; opacity: 1; }
 }
 @keyframes t-2 {
-    0%      { transform: translateX(-100px); opacity: 0; }
-    25%     { transform: translateX(-100px); opacity: 0; }
+    0%      { width: 0%; opacity: 1; }
+    25%     { width: 0%; opacity: 1; }
     
-    33.333% { transform: translateX(0); opacity: 1; }
-    58.333% { transform: translateX(0); opacity: 1; }
+    33.333% { width: 400px; opacity: 1; }
+    58.333% { width: 400px; opacity: 1; }
 
-    66.666% { transform: translateX(100px); opacity: 0; }
-    91.666% { transform: translateX(100px); opacity: 0; }
+    66.666% { width: 0%; opacity: 0; }
+    91.666% { width: 0%; opacity: 0; }
 
-    100%    { transform: translateX(-100px); opacity: 0; }
+    100%    { width: 0%; opacity: 0; }
 }
 @keyframes t-3 {
-    0%      { transform: translateX(-100px); opacity: 0; }
-    25%     { transform: translateX(-100px); opacity: 0; }
+    0%      { width: 0%; opacity: 0; }
+    25%     { width: 0%; opacity: 0; }
     
-    33.333% { transform: translateX(-100px); opacity: 0; }
-    58.333% { transform: translateX(-100px); opacity: 0; }
+    33.333% { width: 0%; opacity: 1; }
+    58.333% { width: 0%; opacity: 1; }
 
-    66.666% { transform: translateX(0); opacity: 1; }
-    91.666% { transform: translateX(0); opacity: 1; }
+    66.666% { width: 400px; opacity: 1; }
+    91.666% { width: 400px; opacity: 1; }
 
-    100%    { transform: translateX(100px); opacity: 0; }
+    100%    { width: 0%; opacity: 0; }
 }
 @keyframes t-1-copy {
-    0%      { transform: translateX(0); opacity: 1; }
-    25%     { transform: translateX(0); opacity: 1; }
+    0%      { width: 400px; opacity: 1; }
+    25%     { width: 400px; opacity: 1; }
     
-    33.333% { transform: translateX(100px); opacity: 0; }
-    58.333% { transform: translateX(100px); opacity: 0; }
+    33.333% { width: 0%; opacity: 0; }
+    58.333% { width: 0%; opacity: 0; }
 
-    66.666% { transform: translateX(-100px); opacity: 0; }
-    91.666% { transform: translateX(-100px); opacity: 0; }
+    66.666% { width: 0%; opacity: 1; }
+    91.666% { width: 0%; opacity: 1; }
 
-    100%    { transform: translateX(0); opacity: 1; }
+    100%    { width: 400px; opacity: 1; }
 }
 @keyframes t-2-copy {
-    0%      { transform: translateX(-100px); opacity: 0; }
-    25%     { transform: translateX(-100px); opacity: 0; }
+    0%      { width: 0%; opacity: 1; }
+    25%     { width: 0%; opacity: 1; }
     
-    33.333% { transform: translateX(0); opacity: 1; }
-    58.333% { transform: translateX(0); opacity: 1; }
+    33.333% { width: 400px; opacity: 1; }
+    58.333% { width: 400px; opacity: 1; }
 
-    66.666% { transform: translateX(100px); opacity: 0; }
-    91.666% { transform: translateX(100px); opacity: 0; }
+    66.666% { width: 0%; opacity: 0; }
+    91.666% { width: 0%; opacity: 0; }
 
-    100%    { transform: translateX(-100px); opacity: 0; }
+    100%    { width: 0%; opacity: 0; }
 }
 @keyframes t-3-copy {
-    0%      { transform: translateX(-100px); opacity: 0; }
-    25%     { transform: translateX(-100px); opacity: 0; }
+    0%      { width: 0%; opacity: 0; }
+    25%     { width: 0%; opacity: 0; }
     
-    33.333% { transform: translateX(-100px); opacity: 0; }
-    58.333% { transform: translateX(-100px); opacity: 0; }
+    33.333% { width: 0%; opacity: 1; }
+    58.333% { width: 0%; opacity: 1; }
 
-    66.666% { transform: translateX(0); opacity: 1; }
-    91.666% { transform: translateX(0); opacity: 1; }
+    66.666% { width: 400px; opacity: 1; }
+    91.666% { width: 400px; opacity: 1; }
 
-    100%    { transform: translateX(100px); opacity: 0; }
+    100%    { width: 0%; opacity: 0; }
 }
 @keyframes show2hide {
     0%  { opacity: 0; }
@@ -580,37 +580,38 @@ aside {
     100%{ opacity: 1; }
 }
 @keyframes t-show2hide {
-    0%  { transform: translateX(-100px); opacity: 0; }
-    20% { transform: translateX(0); opacity: 1; }
-    80% { transform: translateX(0); opacity: 1; }
-    100%{ transform: translateX(100px); opacity: 0; }
+    0%  { width: 0%; opacity: 0; }
+    20% { width: 100%; opacity: 1; }
+    80% { width: 100%; opacity: 1; }
+    100%{ width: 0%; opacity: 0; }
 }
 @keyframes t-hide2show {
-    0%  { transform: translateX(0); opacity: 1; }
-    20% { transform: translateX(100px); opacity: 0; }
-    80% { transform: translateX(-100px); opacity: 0; }
-    100%{ transform: translateX(0); opacity: 1; }
+    0%  { width: 100%; opacity: 1; }
+    20% { width: 0%; opacity: 0; }
+    80% { width: 0%; opacity: 0; }
+    100%{ width: 100%; opacity: 1; }
 }
 @keyframes t-show2hide-copy {
-    0%  { transform: translateX(-100px); opacity: 0; }
-    20% { transform: translateX(0); opacity: 1; }
-    80% { transform: translateX(0); opacity: 1; }
-    100%{ transform: translateX(100px); opacity: 0; }
+    0%  { width: 0%; opacity: 0; }
+    20% { width: 100%; opacity: 1; }
+    80% { width: 100%; opacity: 1; }
+    100%{ width: 0%; opacity: 0; }
 }
 @keyframes t-hide2show-copy {
-    0%  { transform: translateX(0); opacity: 1; }
-    20% { transform: translateX(100px); opacity: 0; }
-    80% { transform: translateX(-100px); opacity: 0; }
-    100%{ transform: translateX(0); opacity: 1; }
+    0%  { width: 100%; opacity: 1; }
+    20% { width: 0%; opacity: 0; }
+    80% { width: 0%; opacity: 0; }
+    100%{ width: 100%; opacity: 1; }
 }
 
 .visual__images > img,
-.visual__texts > .text {
+.visual__texts > .text > p {
     opacity: 0;
     animation-delay: calc(-12s + 1s);
     animation-duration: 12s;
     animation-iteration-count: infinite;
 }
+.visual__texts > .text > p { animation-timing-function: linear; }
 
 #move-1-2:checked ~ .visual .visual__images > img:nth-child(1) { animation-name: s-3; }
 #move-1-2:checked ~ .visual .visual__images > img:nth-child(2) { animation-name: s-1; }
@@ -653,43 +654,43 @@ aside {
 }
 
 
-#move-1-2:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-3; }
-#move-1-2:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-1; }
-#move-1-2:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-2; }
+#move-1-2:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-3; }
+#move-1-2:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-1; }
+#move-1-2:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-2; }
 
-#move-2-3:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-2; }
-#move-2-3:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-3; }
-#move-2-3:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-1; }
+#move-2-3:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-2; }
+#move-2-3:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-3; }
+#move-2-3:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-1; }
 
-#move-3-1:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-1; }
-#move-3-1:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-2; }
-#move-3-1:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-3; }
+#move-3-1:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-1; }
+#move-3-1:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-2; }
+#move-3-1:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-3; }
 
-#move-1-3:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-hide2show, t-1; }
-#move-1-3:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-2; }
-#move-1-3:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-show2hide, t-3; }
+#move-1-3:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-hide2show, t-1; }
+#move-1-3:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-2; }
+#move-1-3:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-show2hide, t-3; }
 
-#move-2-1:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-show2hide, t-3; }
-#move-2-1:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-hide2show, t-1; }
-#move-2-1:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-2; }
+#move-2-1:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-show2hide, t-3; }
+#move-2-1:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-hide2show, t-1; }
+#move-2-1:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-2; }
 
-#move-3-2:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-2; }
-#move-3-2:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-show2hide, t-3; }
-#move-3-2:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-hide2show, t-1; }
+#move-3-2:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-2; }
+#move-3-2:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-show2hide, t-3; }
+#move-3-2:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-hide2show, t-1; }
 
-#move-1-3:checked ~ .visual .visual__texts .text:nth-child(1),
-#move-1-3:checked ~ .visual .visual__texts .text:nth-child(3),
-#move-2-1:checked ~ .visual .visual__texts .text:nth-child(1),
-#move-2-1:checked ~ .visual .visual__texts .text:nth-child(2),
-#move-3-2:checked ~ .visual .visual__texts .text:nth-child(2),
-#move-3-2:checked ~ .visual .visual__texts .text:nth-child(3) {
+#move-1-3:checked ~ .visual .visual__texts .text:nth-child(1) p,
+#move-1-3:checked ~ .visual .visual__texts .text:nth-child(3) p,
+#move-2-1:checked ~ .visual .visual__texts .text:nth-child(1) p,
+#move-2-1:checked ~ .visual .visual__texts .text:nth-child(2) p,
+#move-3-2:checked ~ .visual .visual__texts .text:nth-child(2) p,
+#move-3-2:checked ~ .visual .visual__texts .text:nth-child(3) p {
     animation-iteration-count: 1, infinite;
     animation-duration: 5s, 12s;
     animation-delay: 0s, 5s;
 }
-#move-1-3:checked ~ .visual .visual__texts .text:nth-child(2),
-#move-2-1:checked ~ .visual .visual__texts .text:nth-child(3),
-#move-3-2:checked ~ .visual .visual__texts .text:nth-child(1) {
+#move-1-3:checked ~ .visual .visual__texts .text:nth-child(2) p,
+#move-2-1:checked ~ .visual .visual__texts .text:nth-child(3) p,
+#move-3-2:checked ~ .visual .visual__texts .text:nth-child(1) p {
     animation-delay: 5s;
 }
 
@@ -735,43 +736,43 @@ aside {
 }
 
 
-#move-1-2-copy:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-3-copy; }
-#move-1-2-copy:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-1-copy; }
-#move-1-2-copy:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-2-copy; }
+#move-1-2-copy:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-3-copy; }
+#move-1-2-copy:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-1-copy; }
+#move-1-2-copy:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-2-copy; }
 
-#move-2-3-copy:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-2-copy; }
-#move-2-3-copy:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-3-copy; }
-#move-2-3-copy:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-1-copy; }
+#move-2-3-copy:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-2-copy; }
+#move-2-3-copy:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-3-copy; }
+#move-2-3-copy:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-1-copy; }
 
-#move-3-1-copy:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-1-copy; }
-#move-3-1-copy:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-2-copy; }
-#move-3-1-copy:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-3-copy; }
+#move-3-1-copy:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-1-copy; }
+#move-3-1-copy:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-2-copy; }
+#move-3-1-copy:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-3-copy; }
 
-#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-hide2show-copy, t-1-copy; }
-#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-2-copy; }
-#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-show2hide-copy, t-3-copy; }
+#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-hide2show-copy, t-1-copy; }
+#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-2-copy; }
+#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-show2hide-copy, t-3-copy; }
 
-#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-show2hide-copy, t-3-copy; }
-#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-hide2show-copy, t-1-copy; }
-#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-2-copy; }
+#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-show2hide-copy, t-3-copy; }
+#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-hide2show-copy, t-1-copy; }
+#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-2-copy; }
 
-#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(1) { animation-name: t-2-copy; }
-#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(2) { animation-name: t-show2hide-copy, t-3-copy; }
-#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(3) { animation-name: t-hide2show-copy, t-1-copy; }
+#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(1) p { animation-name: t-2-copy; }
+#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(2) p { animation-name: t-show2hide-copy, t-3-copy; }
+#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(3) p { animation-name: t-hide2show-copy, t-1-copy; }
 
-#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(1),
-#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(3),
-#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(1),
-#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(2),
-#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(2),
-#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(3) {
+#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(1) p,
+#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(3) p,
+#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(1) p,
+#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(2) p,
+#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(2) p,
+#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(3) p {
     animation-iteration-count: 1, infinite;
     animation-duration: 5s, 12s;
     animation-delay: 0s, 5s;
 }
-#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(2),
-#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(3),
-#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(1) {
+#move-1-3-copy:checked ~ .visual .visual__texts .text:nth-child(2) p,
+#move-2-1-copy:checked ~ .visual .visual__texts .text:nth-child(3) p,
+#move-3-2-copy:checked ~ .visual .visual__texts .text:nth-child(1) p {
     animation-delay: 5s;
 }
 
