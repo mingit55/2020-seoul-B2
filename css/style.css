@@ -1063,7 +1063,7 @@ aside {
     flex-wrap: wrap;
     align-items: center;
     padding: 1em;
-    background-color: #f7f7f7;
+    background-color: #fff;
     border: 1px solid #ddd;
 }
 .hash-module__input {
@@ -1121,3 +1121,102 @@ aside {
     color: #e83636;
 }
 /* /해시 모듈 */
+
+/* 출품 신청 */
+#workspace {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+}
+.workspace__inner {
+    width: 1150px;
+    height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+}
+.tool {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    background-color: #f7f7f7;
+    border-left: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tool__item {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #888;
+    cursor: pointer;
+}
+.tool__item:hover { color: #555; }
+.tool__item.active { color: #e83636; }
+
+.help-search > input {
+    width: 300px;
+    height: 2em;
+    border: 1px solid #ddd;
+    padding-left: 0.5em;
+    font-size: 0.9em;
+}
+.help-search > button {
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    color: #555;
+}
+
+.help-tabs {
+    display: flex;
+    height: 2.5em;
+    margin-top: 1em;
+}
+.help-tab {
+    height: 2.5em;
+    padding: 0 1.5em;
+    line-height: 2.5em;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    border-bottom: 0;
+}
+.help-tab:not(:last-child) { border-right: 0; }
+
+.help-body {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+}
+
+.help-item {
+    font-size: 0.95em;
+    color: #888;
+    word-break: keep-all;
+    line-height: 2em;
+}
+
+#tab-select:checked ~ .help-tabs .select,
+#tab-spin:checked ~ .help-tabs .spin,
+#tab-cut:checked ~ .help-tabs .cut,
+#tab-glue:checked ~ .help-tabs .glue {
+    background-color: #fff;
+    position: relative;
+    top: 1px;
+}
+
+#tab-select:checked ~ .help-body > :not(.select),
+#tab-spin:checked ~ .help-body > :not(.spin),
+#tab-cut:checked ~ .help-body > :not(.cut),
+#tab-glue:checked ~ .help-body > :not(.glue){
+    display: none;
+}
+.help-item span.active { background-color: #e7a438; padding: 0.1em; }
+
+/* /출품 신청 */
