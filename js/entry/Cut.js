@@ -43,6 +43,8 @@ class Cut extends Tool {
 
         this.ctx.lineTo(x, y);
         this.ctx.stroke();
+
+        console.log(x, y);
     }
     
     oncontextmenu(makeFunc){
@@ -146,10 +148,12 @@ class Cut extends Tool {
             let sw = newItem.sliced.width;
             let sh = newItem.sliced.height;
             let slicedSrc = new Source(newItem.sctx.getImageData(0, 0, sw, sh));
+            newItem.sctx.clearRect(0, 0, slicedSrc.width, slicedSrc.height);
             console.log(slicedSrc);
             for(let y = 0; y < sw; y++){
                 for(let x = 0; x < sh; x++){
-                    if(slicedSrc.getColor(x, y)){
+                    if(slicedSrc.getColor(x, y) && newItem.src.isSlicedPixel(x, y)){
+                        newItem.sctx.fillRect(x, y, 1, 1);
                         console.log(x, y);
                     }
                 }
