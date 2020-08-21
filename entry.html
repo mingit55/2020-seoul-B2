@@ -122,27 +122,27 @@
 
     <!-- 공예 작업 & 도구 영역 -->
     <div class="container-fluid py-5">
-        <div id="workspace">
-            <div class="workspace__inner">
-
+        <div class="workspace__outer">
+            <div id="workspace">
+                <canvas width="1150" height="600"></canvas>
             </div>
             <div class="tool">
-                <div class="tool__item">
+                <div class="tool__item" title="선택" data-tool="select">
                     <i class="fa fa-mouse-pointer"></i>
                 </div>
-                <div class="tool__item">
+                <div class="tool__item" title="회전" data-tool="spin">
                     <i class="fa fa-repeat"></i>
                 </div>
-                <div class="tool__item">
+                <div class="tool__item" title="자르기" data-tool="cut">
                     <i class="fa fa-cut"></i>
                 </div>
-                <div class="tool__item">
+                <div class="tool__item" title="붙이기" data-tool="glue">
                     <i class="fa fa-object-ungroup"></i>
                 </div>
-                <div class="tool__item">
+                <div class="tool__item" data-target="#list-modal" data-toggle="modal" title="추가">
                     <i class="fa fa-plus"></i>
                 </div>
-                <div class="tool__item">
+                <div class="tool__item" data-role="remove" title="삭제">
                     <i class="fa fa-trash"></i>
                 </div>
             </div>
@@ -219,7 +219,30 @@
     </div>
     <!-- /출품 정보 입력 & 도움말 영역 -->
 
-    <script src="./js/entry/Artwork.js"></script>
+    <!-- 구매한 리스트 -->
+    <div id="list-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="fx-5 text-red">추가</div>
+                </div>
+                <div class="modal-body">
+                    <div class="row"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /구매한 리스트 -->
+
+
+    <script src="./js/entry/Workspace.js"></script>
+    <script src="./js/entry/Paper.js"></script>
+    <script src="./js/entry/Source.js"></script>
+    <script src="./js/entry/Tool.js"></script>
+    <script src="./js/entry/Select.js"></script>
+    <script src="./js/entry/Spin.js"></script>
+    <script src="./js/entry/Cut.js"></script>
+    <script src="./js/entry/Glue.js"></script>
     <script src="./js/entry.js"></script>
 
     <!-- 푸터 -->

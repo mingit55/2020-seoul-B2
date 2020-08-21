@@ -1124,7 +1124,7 @@ aside {
 /* /해시 모듈 */
 
 /* 출품 신청 */
-#workspace {
+.workspace__outer {
     width: 1200px;
     height: 600px;
     margin: 0 auto;
@@ -1132,7 +1132,7 @@ aside {
     position: relative;
     overflow: hidden;
 }
-.workspace__inner {
+#workspace {
     width: 1150px;
     height: 100%;
     position: absolute;
@@ -1219,5 +1219,19 @@ aside {
     display: none;
 }
 .help-item span.active { background-color: #e7a438; padding: 0.1em; }
+
+.context-menu {
+    position: absolute;
+    width: 200px;
+}
+.context-menu__item {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+.context-menu__item:hover { background-color: #f7f7f7; }
+.context-menu__item:not(:last-child) { border-bottom: none; }
 
 /* /출품 신청 */

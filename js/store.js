@@ -199,7 +199,7 @@ class App {
                     paper.id = id;
                     $(e.target).find("input").val("");
                     $(e.target).modal("hide");
-                    this.papers.push(paper);
+                    this.papers.push( new Paper(paper) );
                     this.tags.push(...paper.hashTags);
                     this.renderStore();
                 })
@@ -251,14 +251,17 @@ class App {
             alert(`총 ${this.totalCount}개의 한지가 구매되었습니다.`);
             this.cartList.forEach(async cartItem => {
                 let hasItem = await this.db.get("inventory", cartItem.id);
-                console.log(hasItem);
                 if(hasItem){
                     hasItem.buyCount += cartItem.buyCount;
                     this.db.put("inventory", hasItem);
                 } else {
                     this.db.add("inventory", {
-                        id: cartItem.id, 
-                        buyCount: cartItem.buyCount
+                        id: cartItem.id,
+                        image: cartItem.image,
+                        paper_name: cartItem.paper_name,
+                        width_size: cartItem.width_size,
+                        height_size: cartItem.height_size,
+                        count: cartItem.buyCount,
                     });
                 }
                 cartItem.buyCount = 0;

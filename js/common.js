@@ -91,7 +91,7 @@ class HashModule {
     // 초기 DOM 구축
     init(){
         this.$root.html(`<div class="hash-module">
-                            <input type="hidden" id="tags-value" name="${this.name}">
+                            <input type="hidden" id="tags-value" name="${this.name}" value="[]">
                             <div class="hash-module__input">
                                 <input type="text" placeholder="추가할 태그를 입력하세요">
                                 <div class="example-list"></div>
