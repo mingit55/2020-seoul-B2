@@ -88,12 +88,21 @@ class Source {
     }
 
     // 해당 좌표가 절단선에 속하는 지
-    isSlicedPixel(x, y){
+    isSlicedPixel(X, Y){
+        // 해당 픽셀은 비어있고, 주위가 최소한 하나는 채워져 있되, 전부 다 채워지지 않았을 경우
+        for(let y = Y - 1; y <= Y + 1; y++){
+            for(let x = X - 1; x <= X + 1; x++){
+                if(x !== X && y !== Y && this.getColor(x, y)) return true;
+            }
+        }
+        return false;
+
+        let center = this.getColor(x, y);
         let left = this.getColor(x - 1, y);
         let right = this.getColor(x + 1, y);
         let top = this.getColor(x, y - 1);
         let bottom = this.getColor(x, y + 1);
-        console.log(x, y, left, right, top, bottom);
-        return left || right || top || bottom && !(left && right && top && bottom); // 주위가 최소한 하나는 채워져 있되, 전부 다 채워지지 않았을 경우
+        return !center && (left || right || top || bottom)
+            && !(left && right && top && bottom); 
     }
 }

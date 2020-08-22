@@ -31,6 +31,24 @@ class Paper {
         this.ctx.drawImage(this.sliced, 0, 0);
     }
 
+    // 인수로 받은 한지와 인접한지의 여부
+    isNear(paper){
+        for(let y = this.y; y < this.y + this.src.height; y++){
+            for(let x = this.x; x < this.x + this.src.width; x++){
+                let tx = x - this.x;
+                let ty = y - this.y;
+
+                let ax = x - paper.x;
+                let ay = y - paper.y;
+
+                
+                if(this.src.getColor(tx, ty) && paper.src.getColor(ax, ay))
+                    return true;
+            }
+        }
+        return false;
+    }
+
     // 이미지의 실제 사이즈에 맞춰 재계산
     recalculate(){
         // 실제 위치 & 사이즈대로 데이터를 복사한다.
@@ -54,19 +72,51 @@ class Paper {
         let imageData = new ImageData(uint8, W, H);
         this.src = new Source( imageData );
 
-        // 공용 캔버스의 사이즈를 실사이즈에 맞춰준다.
+        // 공용 캔버스의 위치와 사이즈를 맞춰준다.
         this.canvas.width = W;
         this.canvas.height = H;
         this.x += X;
         this.y += Y;
 
-        
-        // 절단선 캔버스도 함께 위치와 사이즈를 맞춰준다.
+        // 테두리를 다시 계산한다.
+        this.src.borderData = this.src.getBorderData();
+
+        // 절단선 캔버스의 위치와 사이즈를 맞춰준다.
         let slicedData = this.sctx.getImageData(0, 0, this.sliced.width, this.sliced.height);
         this.sliced.width = W;
         this.sliced.height = H;
         this.sctx.clearRect(0, 0, W, H);
         this.sctx.putImageData(slicedData, -X, -Y);
+
+        // 인접한 절단선만 남긴다
+        let sw = this.sliced.width;
+        let sh = this.sliced.height;
+        let slicedSrc = new Source(this.sctx.getImageData(0, 0, sw, sh));
+        this.sctx.clearRect(0, 0, slicedSrc.width, slicedSrc.height);
+        for(let y = 0; y < sw; y++){
+            for(let x = 0; x < sh; x++){
+                if(slicedSrc.getColor(x, y) && this.src.isSlicedPixel(x, y)){
+                    this.sctx.fillRect(x, y, 1, 1);
+                }
+            }
+        }
+
+        // slicedData = this.sctx.getImageData(0, 0, W, H).data;
+        // this.sctx.clearRect(0, 0, W, H);
+
+        // let tempColor = [];
+        // Array.from(slicedData)
+        //     .forEach((color, i) => {
+        //         tempColor.push(color);
+        //         if(tempColor.length === 4){
+        //             let x = Math.floor(i / 4) % W;
+        //             let y = Math.floor((i / 4) / W);
+        //             if(tempColor[3] !== 0 && this.src.isBorderedPixel(x, y)){
+        //                 this.sctx.fillRect(x, y, 1, 1);
+        //             }
+        //             tempColor = [];
+        //         }
+        //     });
 
         return true;
     }

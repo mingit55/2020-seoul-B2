@@ -41,7 +41,7 @@ class Workspace {
         this.papers.forEach(paper => {
             paper.update();
             this.ctx.drawImage(paper.canvas, paper.x, paper.y);
-            // this.ctx.strokeRect(paper.x, paper.y, paper.canvas.width, paper.canvas.height);
+            this.ctx.strokeRect(paper.x, paper.y, paper.canvas.width, paper.canvas.height);
         });
 
         this.ctx.drawImage(this.sliced, 0, 0);

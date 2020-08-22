@@ -6,6 +6,7 @@ class Cut extends Tool {
         this.canvas.width = this.ws.width;
         this.canvas.height = this.ws.height;
         this.ctx = this.canvas.getContext("2d");
+        this.ctx.lineWidth = 1;
 
         this.sliced = this.ws.sliced;                    // 보여주기용 캔버스(workspace)
         this.sctx = this.sliced.getContext("2d");
@@ -43,8 +44,6 @@ class Cut extends Tool {
 
         this.ctx.lineTo(x, y);
         this.ctx.stroke();
-
-        console.log(x, y);
     }
     
     oncontextmenu(makeFunc){
@@ -67,10 +66,12 @@ class Cut extends Tool {
         this.ws.papers = this.ws.papers.filter(paper => paper !== this.selected);
 
         // 절단선에 해당하는 좌표를 모두 비워준다.
+        let slicedArr = []; // 정확한 좌표를 저장하기 위해 배열에 좌표를 저장한다.
         for(let y = 0; y < slicedSrc.height; y++){
             for(let x = 0; x < slicedSrc.width; x++){
                 if(slicedSrc.getColor(x, y)){
                     src.setColor(x - selected.x, y - selected.y, [0, 0, 0, 0]);
+                    slicedArr.push([x, y]);
                 }
             }
         }
@@ -142,34 +143,19 @@ class Cut extends Tool {
             
             // 절단선 복사 ( 원본 + 잘린 궤적 )
             newItem.sctx.drawImage( selected.sliced, 0, 0 );
-            newItem.sctx.drawImage( this.canvas, -selected.x, -selected.y);
-
-            // 인접한 절단선만 남김
-            let sw = newItem.sliced.width;
-            let sh = newItem.sliced.height;
-            let slicedSrc = new Source(newItem.sctx.getImageData(0, 0, sw, sh));
-            newItem.sctx.clearRect(0, 0, slicedSrc.width, slicedSrc.height);
-            console.log(slicedSrc);
-            for(let y = 0; y < sw; y++){
-                for(let x = 0; x < sh; x++){
-                    if(slicedSrc.getColor(x, y) && newItem.src.isSlicedPixel(x, y)){
-                        newItem.sctx.fillRect(x, y, 1, 1);
-                        console.log(x, y);
-                    }
-                }
-            }
+            slicedArr.forEach(([x, y]) => newItem.sctx.fillRect(x - selected.x, y - selected.y, 1, 1));
 
             // 좌표 재계산
-            newItem.recalculate();
-
-            return newItem;
-        }));
+            if(newItem.recalculate())
+                return newItem;
+        }).filter(item => item));
 
         this.cancel();
     }
     
     cancel = e => {
         if(!this.selected) return;
+        console.log("cancel", this.sctx);
         this.ctx.clearRect(0, 0, this.ws.width, this.ws.height);
         this.sctx.clearRect(0, 0, this.ws.width, this.ws.height);
         this.unselectAll();
